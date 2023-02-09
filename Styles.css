@@ -1,1 +1,15 @@
 css
+
+.table-1{
+    border: 1 px rgb(6, 23, 177);
+}
+
+.font{
+    color: rgb(8, 73, 8);
+    font-family:  'Times New Roman', Times, serif;
+    font-size: 16;
+}
+
+.background{
+    color: lightslategray
+}
