@@ -13,3 +13,12 @@ css
 .background{
     color: lightslategray
 }
+
+.div{
+    div: :before {
+        name="emailaddress"
+    }
+    div: :after{
+        type="submit"
+    }
+}
