@@ -1,0 +1,40 @@
+/ Define a function that finds the largest number in a list
+function findLargestNumber(numbers) {
+  let largestNumber = numbers[0];
+  for (let i = 1; i < numbers.length; i++) {
+    if (numbers[i] > largestNumber) {
+      largestNumber = numbers[i];
+    }
+  }
+  return largestNumber;
+}
+function handleButtonClick() {
+  const input = document.getElementById("my-input").value;
+  const numbers = input.split(",").map(Number);
+  const largestNumber = findLargestNumber(numbers);
+  alert(`The largest number is: ${largestNumber}`);
+}
+const button = document.getElementById("my-button");
+button.addEventListener("click", handleButtonClick);
+
+
+let xhr = new XMLHttpRequest()
+xhr.open('GET', 'https://api.weather.gov/points/')
+xhr.send();
+xhr.onload = function() {
+    if (xhr.status != 200) { // analyze HTTP status of the response
+      alert(`Error ${xhr.status}: ${xhr.statusText}`); // e.g. 404: Not Found
+    } else { // show the result
+      alert(`Done, got ${xhr.response.length} bytes`); // response is the server response
+    }
+  };
+  xhr.onprogress = function(event) {
+    if (event.lengthComputable) {
+      alert(`Received ${event.loaded} of ${event.total} bytes`);
+    } else {
+      alert(`Received ${event.loaded} bytes`); // no Content-Length
+    }
+  };
+  xhr.onerror = function() {
+    alert("Request failed");
+  };
