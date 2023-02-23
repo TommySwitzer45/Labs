@@ -1,12 +1,14 @@
 css
 
-.table-1{
-    border: 1px rgb(6, 23, 177);
-}
+.table{
+    --bs-table-color: var(--bs-gray-600);
+    --bs-table-bg: var(--bs-gray-100);
+    --bs-table-border-color: transparent;
+  }
 
 .font{
     color: rgb(8, 73, 8);
-    font-family:  'Times New Roman', Times, serif;
+    font-family:  'Space Grotesk', Times, serif;
     font-size: 16;
 }
 
