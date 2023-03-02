@@ -1,0 +1,63 @@
+const fs = require('fs');
+    function readFileAsync(filePath, callback) {
+        fs.readFile(filePath, 'utf8', (err, data) => {
+            if (err) {
+                callback(err);}
+                else {
+                    callback(null, data);
+                }
+            });
+        }
+
+const fs = require('fs');
+    function readFileAsync(filePath, callback) {
+        fs.readFile(filePath, 'utf8', (err, data) => {
+            if (err) {
+                callback(err);}
+                else {
+                    callback(null, data);
+                }
+            });
+        }
+
+ const https = require('https');
+ function httpRequestAsync(url) {
+    https.get(url, (res) => {
+        let data = '';
+        res.on('data', (chunk) => {
+            data += chunk;
+        });
+        res.on('end', () => {
+            console.log(`Response status code: ${res.statusCode}`);
+            console.log(`Response body: ${data}`);
+        });
+    }).on('error', (err) => {
+        console.error(`Error making HTTP request: ${err.message}`);
+    });
+    const http = require('http');
+
+function httpRequestAsync(url) {
+  http.get(url, (res) => {
+    let data = '';
+    res.on('data', (chunk) => {
+      data += chunk;
+    });
+    res.on('end', () => {
+      console.log(`Response status code: ${res.statusCode}`);
+      console.log(`Response body: ${data}`);
+    });
+  }).on('error', (err) => {
+    console.error(`Error making HTTP request: ${err.message}`);
+  });
+}
+
+const request = require('request');
+
+request('https://jsonplaceholder.typicode.com/posts/1', (err, res, body) => {
+  if (err) {
+    console.error(`Error making HTTP request: ${err.message}`);
+  } else {
+    console.log(`Response status code: ${res.statusCode}`);
+    console.log(`Response body: ${body}`);
+  }
+});
