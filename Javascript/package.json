@@ -11,5 +11,9 @@
     "url": "Javascript"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "keywords": [
+    "Hello",
+    "World"
+  ]
 }
